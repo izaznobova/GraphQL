@@ -1,9 +1,17 @@
 
 
 type Token @entity {
-	id: ID!
-	address: Bytes!
-}
+ 	 id: ID!
+         address: Bytes!
+         symbol: String!
+         name: String!
+         decimals: BigInt!
+         totalSupply: BigInt!
+         tradeVolume: BigDecimal!
+         tradeVolumeUSD: BigDecimal!
+         txCount: BigInt!
+         totalLiquidity: BigDecimal!
+}  
 
 type Market @entity {
 	id: ID!
@@ -25,3 +33,4 @@ type Balance @entity {
 type User @entity {
 	id: ID!
 	balances: [Balance!] @derivedFrom(field: "user")
+}
